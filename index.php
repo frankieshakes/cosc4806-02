@@ -7,5 +7,5 @@
     header('Location: /login.php');
   }
 
-  echo $_SESSION['username'];
+  echo "Welcome back, " . $_SESSION['username'] . '!';
 ?>
