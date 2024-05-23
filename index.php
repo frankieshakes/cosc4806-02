@@ -1,6 +1,11 @@
 <?php
 
-require_once('user.php');
+  session_start();
 
-$user_list = User::get_all_users();
-print_r($user_list);
+  // redirect to login page if not authenticated
+  if (!isset($_SESSION['authenticated'])) {
+    header('Location: /login.php');
+  }
+
+  echo $_SESSION['username'];
+?>
